@@ -7,7 +7,7 @@ WORKDIR /config
 COPY . .
 
 WORKDIR /go
-RUN git clone https://github.com/TerraDharitri/drt-go-chain.git && cd drt-go-chain && git checkout --force $(cat /config/binaryVersion)
+RUN git clone https://github.com/TerraDharitri/drt-go-chain.git && cd drt-go-chain && git fetch --tags && git checkout --force $(cat /config/binaryVersion)
 WORKDIR /go/drt-go-chain
 
 #DharitrI node
