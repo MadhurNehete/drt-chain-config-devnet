@@ -16,10 +16,10 @@ RUN go build -v -ldflags="-X main.appVersion=$(git --git-dir /config/.git descri
 
 RUN mkdir -p /lib_amd64 /lib_arm64
 
-RUN cp $(go list -m -f '{{.DIR}}' github.com/TerraDharitri/drt-go-chain-vm-v)/wasmer/libwasmer_linux_amd64.so /lib_amd64/
+RUN cp $(go list -m -f '{{.DIR}}' github.com/TerraDharitri/drt-go-chain-vm-v1_4)/wasmer/libwasmer_linux_amd64.so /lib_amd64/
 RUN cp $(go list -m -f '{{.DIR}}' github.com/TerraDharitri/drt-go-chain-vm)/wasmer2/libvmexeccapi.so /lib_amd64/
 
-RUN cp $(go list -m -f '{{.DIR}}' github.com/TerraDharitri/drt-go-chain-vm-v)/wasmer/libwasmer_linux_arm64_shim.so /lib_arm64/
+RUN cp $(go list -m -f '{{.DIR}}' github.com/TerraDharitri/drt-go-chain-vm-v1_4)/wasmer/libwasmer_linux_arm64_shim.so /lib_arm64/
 RUN cp $(go list -m -f '{{.DIR}}' github.com/TerraDharitri/drt-go-chain-vm)/wasmer2/libvmexeccapi_arm.so /lib_arm64/
 
 WORKDIR /config
